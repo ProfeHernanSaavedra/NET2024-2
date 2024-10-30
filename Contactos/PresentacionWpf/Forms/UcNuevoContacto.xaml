@@ -6,10 +6,24 @@
              xmlns:local="clr-namespace:PresentacionWpf.Forms"
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="600" Background="#F2F2F2" Loaded="UserControl_Loaded">
-    <Grid Height="500" VerticalAlignment="Top" HorizontalAlignment="Right" Width="600">
-        <Label Content="Nuevo Contacto"  HorizontalAlignment="Left" VerticalAlignment="Top" 
-               FontSize="22"  FontWeight="Bold"/>
-        
-        
+    <Grid Height="500" VerticalAlignment="Center" HorizontalAlignment="Right" Width="600">
+        <Label Content="Nuevo Contacto" FontWeight="Bold" FontSize="22" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="0,15,0,0"/>
+
+        <Label Content="Nombre" Width="100" Height="40" Margin="44,56,456,404" FontSize="18"></Label>
+        <TextBox x:Name="TxtNombre" Width="200" Height="40" Margin="184,56,216,404" FontSize="18"/>
+
+        <Label Content="Apellido" Width="100" Height="40" Margin="44,125,456,335" FontSize="18"></Label>
+        <TextBox x:Name="TxtApellido" Width="200" Height="40" Margin="184,125,216,335" FontSize="18"/>
+
+        <Label Content="Telefono" Width="100" Height="40" Margin="44,200,456,260" FontSize="18"></Label>
+        <TextBox x:Name="TxtTelefono" Width="200" Height="40" Margin="184,200,216,260" FontSize="18"/>
+
+        <Label Content="Cumpleaños" Height="40" Margin="44,270,416,190" FontSize="18"/>
+        <DatePicker Name="DtFechaNacimiento" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="184,270,0,0" Height="50" Width="200" />
+
+        <Label Content="Grupo" Height="40" Margin="44,346,416,114" FontSize="18"/>
+        <ComboBox Name="CboGrupo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="40" Margin="189,346,0,0" FontSize="18"/>
+
+        <Button Name="BtnGuardar" Content="Guardar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="118" Height="40" Margin="409,424,0,0" FontSize="18" Click="BtnGuardar_Click"/>
     </Grid>
 </UserControl>

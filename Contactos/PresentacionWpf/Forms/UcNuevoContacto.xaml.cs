@@ -26,6 +26,33 @@ namespace PresentacionWpf.Forms
             InitializeComponent();
         }
 
-        
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            DtFechaNacimiento.DisplayDateEnd = DateTime.Today;
+            DtFechaNacimiento.SelectedDate = DateTime.Today;
+
+            CboGrupo.ItemsSource = Enum.GetValues(typeof(Clasificacion));
+            CboGrupo.SelectedItem = Clasificacion.Default;
+
+
+        }
+
+        private void BtnGuardar_Click(object sender, RoutedEventArgs e)
+        {
+            //capturar los datos del formulario
+            string nombre = TxtNombre.Text.Trim();
+            string apellido = TxtApellido.Text.Trim();
+            string telefono = TxtTelefono.Text.Trim();
+            DateTime fechaNacimiento = (DateTime)DtFechaNacimiento.SelectedDate;
+            Clasificacion grupo = (Clasificacion)CboGrupo.SelectedItem;
+
+            // validar datos
+
+            // guardar los datos en BLL
+
+            //Limpiar formulario
+
+            //mensajes
+        }
     }
 }
