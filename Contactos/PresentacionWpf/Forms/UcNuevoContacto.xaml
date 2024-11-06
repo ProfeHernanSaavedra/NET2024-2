@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:PresentacionWpf.Forms"
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="600" Background="#F2F2F2" Loaded="UserControl_Loaded">
-    <Grid Height="500" VerticalAlignment="Center" HorizontalAlignment="Right" Width="600">
+    <Grid Height="500" VerticalAlignment="Center" HorizontalAlignment="Right" Width="600" Loaded="Grid_Loaded">
         <Label Content="Nuevo Contacto" FontWeight="Bold" FontSize="22" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="0,15,0,0"/>
 
         <Label Content="Nombre" Width="100" Height="40" Margin="44,56,456,404" FontSize="18"></Label>

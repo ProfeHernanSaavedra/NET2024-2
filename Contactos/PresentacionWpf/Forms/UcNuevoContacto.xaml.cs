@@ -42,17 +42,60 @@ namespace PresentacionWpf.Forms
             //capturar los datos del formulario
             string nombre = TxtNombre.Text.Trim();
             string apellido = TxtApellido.Text.Trim();
-            string telefono = TxtTelefono.Text.Trim();
+            int telefono = int.Parse(TxtTelefono.Text.Trim());
             DateTime fechaNacimiento = (DateTime)DtFechaNacimiento.SelectedDate;
             Clasificacion grupo = (Clasificacion)CboGrupo.SelectedItem;
 
             // validar datos
+            List<string> errores = new List<string>();
+            if (nombre == string.Empty)
+            {
+                errores.Add("Debe ingresar el nombre del contacto");
+            }
+
+            if (apellido == string.Empty)
+            {
+                errores.Add("Debe ingresar el apellido");
+            }
 
             // guardar los datos en BLL
+            if (errores.Count == 0)
+            {
+                //guardar los datos
+                Persona nuevaPersona = new Persona();
+                nuevaPersona.Nombre = nombre;
+                nuevaPersona.Apellido = apellido;
+                nuevaPersona.Telefono = telefono;
+                nuevaPersona.FechaNacimiento = fechaNacimiento;
+                nuevaPersona.Grupo = grupo;
 
+                ContactoBLL cbll = new ContactoBLL();
+                cbll.Agregar(nuevaPersona);
+
+                //limpiar formulario
+                TxtNombre.Text = string.Empty;
+                TxtApellido.Text = string.Empty;
+                TxtTelefono.Text = string.Empty;
+                DtFechaNacimiento.SelectedDate = DateTime.Today;
+                CboGrupo.SelectedItem = Clasificacion.Default;
+                //mensajes
+                MessageBox.Show(nombre + " se ha agregado correctamente","Nuevo Contacto",MessageBoxButton.OK,MessageBoxImage.Information);
+            }
+            else
+            {
+                //hay errores
+                string mensajesError = string.Join("\n",errores);
+                MessageBox.Show(mensajesError,"Error crear Contacto",MessageBoxButton.OK,MessageBoxImage.Error);
+                //mensajes
+            }
             //Limpiar formulario
 
             //mensajes
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
