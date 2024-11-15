@@ -13,23 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Presentacion
+namespace Presentacion.Forms
 {
     /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
+    /// Lógica de interacción para UcCategoria.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class UcCategoria : UserControl
     {
-        public MainWindow()
+        public UcCategoria()
         {
             InitializeComponent();
-        }
-
-        private void BtnCategoria_Click(object sender, RoutedEventArgs e)
-        {
-            UserControl categoria = new Forms.UcCategoria();
-            this.GrdMain.Children.Clear();
-            this.GrdMain.Children.Add(categoria);
         }
     }
 }

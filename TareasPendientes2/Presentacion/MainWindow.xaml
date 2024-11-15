@@ -5,8 +5,48 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Presentacion"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Tareas Pendientes" Height="500" Width="850" Background="#F2F2F2">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel>
+            <TextBlock Text="Tareas Pendientes" FontSize="24" FontWeight="Bold" Margin="10,0,0,0"/>
+            <Button Name="BtnInicio" 
+                    Content="Inicio"
+                    Width="200"
+                    Height="40"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Center"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    HorizontalContentAlignment="Left" Padding="15,1,1,1"
+                    FontWeight="Normal"/>
+            <Button Name="BtnNuevo" 
+                    Content="Nueva Tarea"
+                    Width="200"
+                    Height="40"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Center"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    HorizontalContentAlignment="Left" Padding="15,1,1,1"
+                    FontWeight="Normal"/>
+            <Button Name="BtnCategoria" 
+                    Content="Categorías"
+                    Width="200"
+                    Height="40"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Center"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    HorizontalContentAlignment="Left" Padding="15,1,1,1"
+                    FontWeight="Normal" Click="BtnCategoria_Click"/>
+        </StackPanel>
+        <Grid x:Name="GrdMain" Grid.Column="1">
+
+        </Grid>
+
     </Grid>
 </Window>
