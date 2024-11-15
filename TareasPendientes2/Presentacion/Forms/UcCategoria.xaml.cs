@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Negocio;
 
 namespace Presentacion.Forms
 {
@@ -20,9 +21,18 @@ namespace Presentacion.Forms
     /// </summary>
     public partial class UcCategoria : UserControl
     {
+        CategoriaBLL catBll = new CategoriaBLL();
         public UcCategoria()
         {
             InitializeComponent();
+        }
+
+        private void BtnGuardar_Click(object sender, RoutedEventArgs e)
+        {
+            string nombre = TxtNombre.Text.Trim();
+            catBll.Add(nombre);
+            MessageBox.Show("Categoría agregada","Nueva Categoría",MessageBoxButton.OK,MessageBoxImage.Information);
+            TxtNombre.Text = string.Empty;
         }
     }
 }

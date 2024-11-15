@@ -104,7 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="TareasPendientes.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="TareasPendientesEDM.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -117,7 +117,7 @@
       <LastGenOutput>TareasPendientesEDM.cs</LastGenOutput>
     </Content>
     <Content Include="TareasPendientes_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>TareasPendientes.mdf</DependentUpon>
     </Content>
   </ItemGroup>
