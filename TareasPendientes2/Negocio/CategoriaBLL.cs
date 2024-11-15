@@ -13,11 +13,29 @@ namespace Negocio
 
         public void Add(string nombre)
         {
-            Categoria nueva = new Categoria();
-            nueva.Nombre = nombre;
+            //verificar que el nombre cumplea con condiciones
 
-            tp.Categoria.Add(nueva);
-            tp.SaveChanges();
+            if (Get(nombre) ==null)
+            {
+                Categoria nueva = new Categoria();
+                nueva.Nombre = nombre;
+
+                tp.Categoria.Add(nueva);
+                tp.SaveChanges();
+            }
+            else
+            {
+                throw new ArgumentException("Categoria ya existe");
+            }
+
+            
+        }
+
+        public Categoria Get(string nombre)
+        {
+            Categoria categoria = tp.Categoria.Where(c => c.Nombre == nombre).FirstOrDefault();
+
+            return categoria;
         }
 
     }

@@ -29,10 +29,20 @@ namespace Presentacion.Forms
 
         private void BtnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            string nombre = TxtNombre.Text.Trim();
-            catBll.Add(nombre);
-            MessageBox.Show("Categoría agregada","Nueva Categoría",MessageBoxButton.OK,MessageBoxImage.Information);
-            TxtNombre.Text = string.Empty;
+            try
+            {
+                string nombre = TxtNombre.Text.Trim();
+                catBll.Add(nombre);
+                MessageBox.Show("Categoría agregada", "Nueva Categoría", MessageBoxButton.OK, MessageBoxImage.Information);
+                TxtNombre.Text = string.Empty;
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message,"Nueva categoria",MessageBoxButton.OK,MessageBoxImage.Error);
+
+            }
+
+            
         }
     }
 }
