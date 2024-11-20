@@ -43,5 +43,15 @@ namespace Negocio
             return tp.Categoria.ToList();
         }
 
+        public void Delete(string nombre)
+        {
+            Categoria nomCat = Get(nombre);
+            if (nomCat != null)
+            {
+                tp.Categoria.Remove(nomCat);
+                tp.SaveChanges();
+            }
+        }
+
     }
 }

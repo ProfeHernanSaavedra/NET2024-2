@@ -50,5 +50,13 @@ namespace Presentacion.Forms
 
             
         }
+
+        private void BtnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+            string nombre = LstCatgoria.SelectedItem.ToString();
+            catBll.Delete(nombre);
+
+            ListarCategorias();
+        }
     }
 }
