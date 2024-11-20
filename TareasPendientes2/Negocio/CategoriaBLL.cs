@@ -38,5 +38,10 @@ namespace Negocio
             return categoria;
         }
 
+        public List<Categoria> GetAll()
+        {
+            return tp.Categoria.ToList();
+        }
+
     }
 }

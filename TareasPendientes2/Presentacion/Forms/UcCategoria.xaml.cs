@@ -25,6 +25,12 @@ namespace Presentacion.Forms
         public UcCategoria()
         {
             InitializeComponent();
+            ListarCategorias();
+        }
+
+        private void ListarCategorias()
+        {
+            LstCatgoria.ItemsSource = catBll.GetAll();
         }
 
         private void BtnGuardar_Click(object sender, RoutedEventArgs e)
